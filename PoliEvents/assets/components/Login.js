@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View,TextInput } from 'react-native';
+import { StyleSheet, Text, View,TextInput,Button } from 'react-native';
 
 
 class Login extends React.Component{
@@ -15,10 +15,12 @@ class Login extends React.Component{
           style={styles.input}
           placeholder="Contraseña"
           />
+          <Button title='continue' />
     </View>
         );
     }
 }
+
 const styles = StyleSheet.create({
     container: {
       flex: 1,
