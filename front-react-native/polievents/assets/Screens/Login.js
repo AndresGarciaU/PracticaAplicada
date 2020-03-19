@@ -5,25 +5,31 @@ import { StyleSheet, Text, View,TextInput,Button } from 'react-native';
 class Login extends React.Component{
     render(){
       
-      const{navigate}=this.props.navigation;
+        const{navigate}=this.props.navigation;
 
         return(
-    <View style={styles.container}>
-        <Text style={styles.welcome}>Login</Text>
-            <TextInput
-              style={styles.input}
-              placeholder="usuario"
+          <View style={styles.container}>
+
+              <Text style={styles.welcome}>PoliEvents</Text>
+
+              <TextInput
+                style={styles.input}
+                placeholder="Correo electronico"
               />
-          <TextInput
-          style={styles.input}
-          placeholder="Contraseña"
-          />
-          <Button
-            title='continue' 
-            onPress={()=> navigate('Home'
-            )}
-          />
-    </View>
+
+              <TextInput
+              style={styles.input}
+              placeholder="Contraseña"
+              />
+
+              <Button
+                large
+                title='INGRESAR' 
+                onPress={()=> navigate('Home'
+                )}
+              />
+
+          </View>
         );
     }
 }
@@ -34,7 +40,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor:'blue'
+      backgroundColor:'#00355A'
     },
     welcome:{
       padding:10,
@@ -48,7 +54,8 @@ const styles = StyleSheet.create({
       marginBottom:10,
       padding:10,
       width : "90%",
-      backgroundColor: 'white'
+      backgroundColor: 'white',
+      borderRadius:25
   
     }
   });
