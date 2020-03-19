@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View,TextInput,Button } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createAppContainer } from 'react-navigation';
 import { NavigationContainer } from '@react-navigation/native';
 //Importo mis Screens
 

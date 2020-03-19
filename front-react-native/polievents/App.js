@@ -5,7 +5,7 @@ import {createStackNavigator} from 'react-navigation-stack';
 import Login from './assets/Screens/Login';
 import Home from './assets/Screens/Home';
 import { createAppContainer } from 'react-navigation';
-//import Navigator from './Routes/HomeStack';
+
 
 const Navigator = createStackNavigator({
   Login:{screen:Login},
