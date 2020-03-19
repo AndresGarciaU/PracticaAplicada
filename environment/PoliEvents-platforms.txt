@@ -1,0 +1,34 @@
+Practica Aplicada
+Practica Aplicada
+
+******************************************************
+Cuenta de Gmail:
+******************************************************
+URL:		https://mail.google.com/
+Nombre:		Practica
+Apellido:	Aplicada-2020-1
+correo:		polievents2020@gmail.com
+pass:		polievents202001
+
+Fecha de Nacimiento:
+Dia:	01
+Mes:	Enero
+Año:	2000
+sexo:	Hombre
+******************************************************
+Cuenta de Heroku:
+******************************************************
+First name:		Practica
+Last name:		Aplicada
+Role:			Student
+Country:		Colombia
+Dev Language:	Node.js
+Email address:	polievents2020@gmail.com
+pass:			polievents202001*
+******************************************************
+Cuenta de MongoDB:
+******************************************************
+Email:			polievents2020@gmail.com
+pass:			practicaaplicada20201*
+First name:		Practica
+Last name:		Aplicada
