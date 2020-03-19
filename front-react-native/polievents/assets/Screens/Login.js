@@ -4,6 +4,9 @@ import { StyleSheet, Text, View,TextInput,Button } from 'react-native';
 
 class Login extends React.Component{
     render(){
+      
+      const{navigate}=this.props.navigation;
+
         return(
     <View style={styles.container}>
         <Text style={styles.welcome}>Login</Text>
@@ -15,7 +18,11 @@ class Login extends React.Component{
           style={styles.input}
           placeholder="Contraseña"
           />
-          <Button title='continue' />
+          <Button
+            title='continue' 
+            onPress={()=> navigate('Home'
+            )}
+          />
     </View>
         );
     }
