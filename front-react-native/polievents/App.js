@@ -5,12 +5,25 @@ import {createStackNavigator} from 'react-navigation-stack';
 import Login from './assets/Screens/Login';
 import Home from './assets/Screens/Home';
 import { createAppContainer } from 'react-navigation';
+import { StackActions } from '@react-navigation/native';
 
 
 const Navigator = createStackNavigator({
-  Login:{screen:Login},
-  Home:{screen:Home}
+  
+  Login:{
+    screen:Login, 
+    navigationOptions:{
+      header:false
+    }
+  },
+  Home:{
+    screen:Home,
+    navigationOptions:{
+      header:false
+    }
+  },
 });
 
 const App= createAppContainer(Navigator);
 export default App;
+//#00355A

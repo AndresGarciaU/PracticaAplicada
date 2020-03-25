@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View,TextInput,Button } from 'react-native';
 
 
-class Login extends React.Component{
+export default class Login extends React.Component{
     render(){
       
         const{navigate}=this.props.navigation;
@@ -60,4 +60,3 @@ const styles = StyleSheet.create({
     }
   });
   
-export default Login;
