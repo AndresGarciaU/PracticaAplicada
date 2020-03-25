@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import {Text} from 'react-native';
-class Tickets extends React.Component{
+class Admin extends React.Component{
     render(){
         return(
             <Text>
-                Aca van los eventos que el Usuario se ha registrado
+            Aca van las opciones para que el administrador cree eventos entre otras opciones
             </Text>
         );
     }
 }
-export default Tickets;
+export default Admin;
