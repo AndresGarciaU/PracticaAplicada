@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Text} from 'react-native';
-class Tickets extends React.Component{
+
+export default class Tickets extends React.Component{
     render(){
         return(
             <Text>
@@ -9,4 +10,3 @@ class Tickets extends React.Component{
         );
     }
 }
-export default Tickets;

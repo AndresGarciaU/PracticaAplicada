@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Text} from 'react-native';
-class Likes extends React.Component{
+
+export default class Likes extends React.Component{
     render(){
         return(
             <Text>
@@ -9,4 +10,3 @@ class Likes extends React.Component{
         );
     }
 }
-export default Likes;

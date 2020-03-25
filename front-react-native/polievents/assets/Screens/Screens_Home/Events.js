@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Text} from 'react-native';
-class Events extends React.Component{
+
+export default class Events extends React.Component{
     render(){
         return(
             <Text>Aca iran los eventos que el administrador agrega</Text>
         );
     }
 }
-export default Events;

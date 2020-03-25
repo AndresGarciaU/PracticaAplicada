@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
@@ -8,29 +8,20 @@ import Events from './Screens_Home/Events';
 import Likes from './Screens_Home/Likes';
 import Admin from './Screens_Home/Admin';
 import Tickets from './Screens_Home/Tickets';
-import { StyleSheet} from 'react-native';
-
-
-
-
-
 
 const Tab = createBottomTabNavigator();
 
-class Home extends React.Component{
+export default class Home extends React.Component{
     static navigationOptions={
         title:'Home',
     };
-
     render(){
         return(
             <NavigationContainer>
-                
                 <Tab.Navigator
                     screenOptions={({ route }) => ({
                         tabBarIcon: ({ focused, color, size }) => {
                             let iconName;
-
                             if (route.name === 'Events') {
                             iconName = focused ? 'ios-leaf' : 'ios-leaf';
                             } else if (route.name === 'Likes') {
@@ -40,8 +31,6 @@ class Home extends React.Component{
                             }else if (route.name === 'Admin') {
                             iconName = focused ? 'ios-bulb' : 'ios-bulb';
                             }
-
-                            // You can return any component that you like here!
                             return <Ionicons name={iconName} size={size} color={color} />;
                         },
                     })}
@@ -50,7 +39,6 @@ class Home extends React.Component{
                     inactiveTintColor: 'gray',
                     }}
                 >
-                    
                     <Tab.Screen name="Events" component={Events}/>
                     <Tab.Screen name="Likes" component={Likes} />
                     <Tab.Screen name="Tickets" component={Tickets} />
@@ -61,14 +49,3 @@ class Home extends React.Component{
         );
     }
 }
-
-const styles=StyleSheet.create({
-bottom:{
-    backgroundColor:'#00355A'
-},
-bottomBar:{
-    borderRadius:25
-}
-});
-
-export default Home;
