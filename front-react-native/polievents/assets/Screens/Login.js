@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View,TextInput,Button } from 'react-native';
-
+import { TouchableOpacity } from 'react-native-gesture-handler';
 export default class Login extends React.Component{
     render(){    
         const{navigate}=this.props.navigation;
@@ -21,6 +21,17 @@ export default class Login extends React.Component{
                 onPress={()=> navigate('Home'
                 )}
               />
+              <View >
+              <Text style={styles.signUpText}>¿No tienes cuenta?</Text>
+                <TouchableOpacity
+                  style={styles.registerButton}
+                  onPress={()=> navigate('registerFormat')}
+                >
+                  <Text style={styles.registerText}>
+                    Registrarse
+                  </Text>
+                </TouchableOpacity>
+              </View>
           </View>
         );
     }
@@ -48,5 +59,31 @@ const styles = StyleSheet.create({
       width : "90%",
       backgroundColor: 'white',
       borderRadius:25
+    },
+    signUpContainer:{
+      //alignContent:'center',
+      //marginBottom:0,
+      //padding:10,
+      //marginVertical:0,
+      alignContent:'flex-end'
+    },
+    signUpText:{
+      //alignItems:'center',
+      color:'white',
+      //justifyContent: 'center'
+      fontSize:16
+    },
+    registerButton:{
+      //alignContent:'center',
+
+      
+
+    },
+    registerText:{
+      fontWeight: 'bold',
+      textDecorationLine: 'underline',
+      color:'#00B5DE',
+      fontSize:14,
+      
     }
   });

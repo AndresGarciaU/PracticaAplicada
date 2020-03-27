@@ -1,6 +1,7 @@
 import {createStackNavigator} from 'react-navigation-stack';
 import Login from './assets/Screens/Login';
 import Home from './assets/Screens/Home';
+import registerFormat from './assets/Screens/registerFormat';
 import { createAppContainer } from 'react-navigation';
 
 const Navigator = createStackNavigator({
@@ -16,6 +17,12 @@ const Navigator = createStackNavigator({
       header:false
     }
   },
+  registerFormat:{
+    screen:registerFormat,
+    navigationOptions:{
+      header:false
+    }
+  }
 });
 
 const App= createAppContainer(Navigator);
