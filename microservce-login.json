@@ -1,0 +1,457 @@
+{
+    "version": 6,
+    "entities": [
+        {
+            "entity": {
+                "type": "Project",
+                "description": "This microservice will allow us to make all operation related with login process.",
+                "id": "633ed1f9-aacf-4d1e-b498-a7191cdd6bb4",
+                "name": "microservice-login-ProdTest"
+            },
+            "children": [
+                {
+                    "entity": {
+                        "type": "Service",
+                        "id": "8bf5a433-5521-42a3-aa04-9d8b8395db73",
+                        "name": "DEL - /api/polievents/login/deleteuser"
+                    },
+                    "children": [
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.5",
+                                    "name": "DELETE"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "limitless-crag-85743.herokuapp.com",
+                                    "path": "/api/polievents/login/deleteuser/standart/5e7bbd9cbd5a2f00176db039"
+                                },
+                                "id": "92dbdd87-7e07-4fe8-b7af-968bf321c523",
+                                "name": "/estandart",
+                                "headers": []
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.5",
+                                    "name": "DELETE"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "limitless-crag-85743.herokuapp.com",
+                                    "path": "/api/polievents/login/deleteuser/external/5e7bb8067ac60118c0287ed6"
+                                },
+                                "id": "25077728-08a2-491f-ae1e-8610e2e92a5c",
+                                "name": "/external",
+                                "headers": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "entity": {
+                        "type": "Service",
+                        "id": "5aaa58de-d085-458d-8e5e-c14341c66872",
+                        "name": "GET - /api/polievents/login"
+                    },
+                    "children": [
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "limitless-crag-85743.herokuapp.com",
+                                    "path": "/api/polievents/login/userexternal"
+                                },
+                                "id": "2a59cf30-0253-4bc8-b390-23b265a09870",
+                                "name": "/userexternal",
+                                "headers": []
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "limitless-crag-85743.herokuapp.com",
+                                    "path": "/api/polievents/login/userlogin"
+                                },
+                                "id": "1cc2b34e-8de6-43d0-8ccb-726cd5e19a76",
+                                "name": "/userlogin",
+                                "headers": []
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": [
+                                            {
+                                                "enabled": true,
+                                                "name": "code",
+                                                "value": "1320014099"
+                                            }
+                                        ]
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "limitless-crag-85743.herokuapp.com",
+                                    "path": "/api/polievents/login/userlogin/query"
+                                },
+                                "id": "56ff8830-a707-4a44-b54a-12b4821e5d46",
+                                "name": "/userlogin/query?code=",
+                                "headers": []
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": [
+                                            {
+                                                "enabled": true,
+                                                "name": "id",
+                                                "value": "5e7ba8d2d2fd390580c1ccd3"
+                                            }
+                                        ]
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "limitless-crag-85743.herokuapp.com",
+                                    "path": "/api/polievents/login/userlogin/query"
+                                },
+                                "id": "5aacb8a5-7602-43ea-95ed-53b5d6d976d7",
+                                "name": "/userlogin/query?id=",
+                                "headers": []
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "requestBody": true,
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                                    "name": "POST"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text",
+                                    "textBody": "{\n    \"user\": \"davargas\",\n    \"code\": \"1520014222\",\n    \"typeUser\": \"estudiante\"\n}"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "limitless-crag-85743.herokuapp.com",
+                                    "path": "/api/polievents/login/userlogin"
+                                },
+                                "id": "69a6e86f-9f38-4cc3-93db-30ff16e098f7",
+                                "name": "Login - /userlogin",
+                                "headers": [
+                                    {
+                                        "enabled": true,
+                                        "name": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "entity": {
+                        "type": "Service",
+                        "id": "96911dd4-d365-47e0-85dc-38865379e1b3",
+                        "name": "POST - /api/polievents/login/createuser"
+                    },
+                    "children": [
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "requestBody": true,
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                                    "name": "POST"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text",
+                                    "textBody": "{\n    \"mail\": \"aflopez@gmail.com\",\n  \t\"name1\": \"Andres\",\n    \"name2\": \"Felipe\",\n    \"lastName1\": \"Lopez\",\n    \"lastName2\": \"Perez\",\n    \"reason\": \"motivo-x\",\n    \"typeUser\": \"invitado\"\n}"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "limitless-crag-85743.herokuapp.com",
+                                    "path": "/api/polievents/login/createuser/external"
+                                },
+                                "id": "35ae0f81-eb2d-4749-bf49-7e73c1d9bb6e",
+                                "name": "/external - new user",
+                                "headers": [
+                                    {
+                                        "enabled": true,
+                                        "name": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "requestBody": true,
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                                    "name": "POST"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text",
+                                    "textBody": "{\n    \"user\": \"lfmorales\",\n    \"code\": \"1320014099\",\n    \"typeUser\": \"estudiante\"\n}"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "limitless-crag-85743.herokuapp.com",
+                                    "path": "/api/polievents/login/createuser/standart"
+                                },
+                                "id": "490dd249-7ab6-482d-85a8-2b853fb7ff52",
+                                "name": "/standart - error user",
+                                "headers": [
+                                    {
+                                        "enabled": true,
+                                        "name": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "requestBody": true,
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                                    "name": "POST"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text",
+                                    "textBody": "{\n    \"user\": \"admezalo\",\n    \"code\": \"1320014100\"\n}"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "limitless-crag-85743.herokuapp.com",
+                                    "path": "/api/polievents/login/createuser/standart"
+                                },
+                                "id": "44c4b997-c139-4314-85d3-e2d8470de026",
+                                "name": "/standart - error validation",
+                                "headers": [
+                                    {
+                                        "enabled": true,
+                                        "name": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "requestBody": true,
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                                    "name": "POST"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text",
+                                    "textBody": "{\n    \"user\": \"davargas\",\n    \"code\": \"1520014222\",\n    \"typeUser\": \"estudiante\"\n}"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "limitless-crag-85743.herokuapp.com",
+                                    "path": "/api/polievents/login/createuser/standart"
+                                },
+                                "id": "7be3c79d-dfc0-43f2-9fd7-8402d0a2a13c",
+                                "name": "/standart - new user",
+                                "headers": [
+                                    {
+                                        "enabled": true,
+                                        "name": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
