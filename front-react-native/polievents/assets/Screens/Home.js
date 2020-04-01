@@ -23,6 +23,9 @@ const Tab = createBottomTabNavigator({
     Events:{
         screen: Events
     },
+    Likes:{
+         screen: Likes
+    },
     Tickets:{
         screen: Tickets
     },
