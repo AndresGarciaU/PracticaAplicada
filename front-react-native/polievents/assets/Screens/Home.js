@@ -20,11 +20,12 @@ settings:{
 });
 
 const Tab = createBottomTabNavigator({
+    
     Events:{
         screen: Events
     },
     Likes:{
-         screen: Likes
+        screen: Likes
     },
     Tickets:{
         screen: Tickets
