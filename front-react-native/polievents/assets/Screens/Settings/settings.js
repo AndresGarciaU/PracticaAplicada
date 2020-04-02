@@ -5,6 +5,7 @@ import { StyleSheet, Text, View,TextInput,Button,color } from 'react-native';
 
 export default class settings extends React.Component{
     render(){
+      const{navigate}=this.props.navigation;
         return(
             <View 
             style={styles.container}>
@@ -19,21 +20,21 @@ export default class settings extends React.Component{
             large
             title='Siguiendo' 
             color= '#e0e0e0'
-            onPress={()=> navigate('Nombre'
+            onPress={()=> navigate('siguiendo'
             )}
           />
           <Button
             large
             title='Cerrar sesion' 
             color= '#e0e0e0'
-            onPress={()=> navigate('nombre'
+            onPress={()=> navigate('cerrarSesion'
             )}
           />
           <Button
             large
             title='Gestionar Eventos' 
             color= '#e0e0e0'
-            onPress={()=> navigate('Nombre'
+            onPress={()=> navigate('gestionarEventos'
             )}
           />
           </View>
