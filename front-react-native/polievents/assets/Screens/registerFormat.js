@@ -3,19 +3,19 @@ import {Text,
         FlatList,
         StyleSheet,
         View,
-        TextInput
+        TextInput,
+
     } from 'react-native';
 import Login from './Login';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-
 export default class registerFormat extends React.Component{
-    
     render(){
         const{navigate}=this.props.navigation;
         return(
             <View style={styles.container}>
                 <View style={styles.form}>
+                    
                     <Text style={styles.header}>
                         Registro
                     </Text>
