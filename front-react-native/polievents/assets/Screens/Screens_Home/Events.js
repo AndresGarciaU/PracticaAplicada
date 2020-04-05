@@ -27,7 +27,6 @@ export default class Events extends React.Component{
     }
     parseEventsData(){
         if(this.state.events!=null){
-            
             return this.state.events.map((eventos,i)=>{
                 return(
                     <View

@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View,TextInput,Button } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 export default class Login extends React.Component{
+  
     render(){    
         const{navigate}=this.props.navigation;
         return(
