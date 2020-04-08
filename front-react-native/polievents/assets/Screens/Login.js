@@ -19,25 +19,6 @@ export default class Login extends React.Component{
     
   }
 
-  postData= async()=>{
-    this.setState({text:'Clicked'})
-    fetch('https://limitless-crag-85743.herokuapp.com/api/polievents/login/userlogin',{
-        method:'POST',
-        headers:{
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-        },
-        body:JSON.stringify({
-            user: this.setState.userName,
-            code: this.setState.userCode,
-            typeUser: this.setState.userType
-        })
-    }).then((response) => response.text())
-    .then((responseData) => { console.log("response: " + responseData); })
-    .catch((err) => { console.log(err); });
-  }
-
-
     render(){
           
         const{navigate}=this.props.navigation;
@@ -47,25 +28,15 @@ export default class Login extends React.Component{
               <TextInput
                 style={styles.input}
                 placeholder="Usuario"
-                onChangeText={(userName)=>this.setState({userName})}
-                value={this.setState}
               />
               <TextInput
                 style={styles.input}
                 placeholder="Codigo"
                 secureTextEntry
-                onChangeText={(userCode)=>this.setState({userCode})}
-                value={this.setState}
               />
               <TextInput
                 style={styles.input}
                 placeholder="Tipo Usuario"
-                onChangeText={(userType)=>this.setState({userType})}
-                value={this.setState}
-              />
-              <Button
-                title='Probando Login'
-                onPress={this.postData}
               />
               <Button
                 large
