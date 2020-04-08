@@ -4,7 +4,11 @@ import {Text, Button, View} from 'react-native';
 export default class Likes extends React.Component{
     constructor(props){
         super(props);
-        this.state={text:''};
+        this.state={
+            text:'',
+            obj:'',
+        };
+        
     }
 
     postData= async()=>{
@@ -21,7 +25,13 @@ export default class Likes extends React.Component{
                 typeUser: "estudiante"
             })
         }).then((response) => response.text())
-        .then((responseData) => { console.log("response: " + responseData); })
+        .then((responseData) => {
+            console.log("response: " + responseData);
+            var obj= JSON.parse(responseData)
+            console.log("Usuario-->"+obj.user);
+            console.log("Codigo-->"+obj.code);
+            console.log("Tipo de Usuario-->"+obj.typeUser);
+        })
         .catch((err) => { console.log(err); });
     }
     
@@ -31,6 +41,9 @@ export default class Likes extends React.Component{
                 <Button onPress={this.postData} title="Post Data"/>
                 <Text>
                     {this.state.text}
+                </Text>
+                <Text>
+                    Hola
                 </Text>
             </View>
         );

@@ -1,20 +1,71 @@
 import React from 'react';
-import { StyleSheet, Text, View,TextInput,Button } from 'react-native';
+import {  StyleSheet,
+          Text, 
+          View,
+          TextInput,
+          Button,
+          TouchableWithoutFeedback
+      } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 export default class Login extends React.Component{
   
-    render(){    
+  constructor(props){
+    super(props);
+    this.state={
+        userName: '',
+        userCode: '',
+        userType: '',
+    };
+    
+  }
+
+  postData= async()=>{
+    this.setState({text:'Clicked'})
+    fetch('https://limitless-crag-85743.herokuapp.com/api/polievents/login/userlogin',{
+        method:'POST',
+        headers:{
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body:JSON.stringify({
+            user: this.setState.userName,
+            code: this.setState.userCode,
+            typeUser: this.setState.userType
+        })
+    }).then((response) => response.text())
+    .then((responseData) => { console.log("response: " + responseData); })
+    .catch((err) => { console.log(err); });
+  }
+
+
+    render(){
+          
         const{navigate}=this.props.navigation;
         return(
-          <View style={styles.container}>
+            <View style={styles.container}>
               <Text style={styles.welcome}>PoliEvents</Text>
               <TextInput
                 style={styles.input}
-                placeholder="Correo electronico"
+                placeholder="Usuario"
+                onChangeText={(userName)=>this.setState({userName})}
+                value={this.setState}
               />
               <TextInput
-              style={styles.input}
-              placeholder="Contraseña"
+                style={styles.input}
+                placeholder="Codigo"
+                secureTextEntry
+                onChangeText={(userCode)=>this.setState({userCode})}
+                value={this.setState}
+              />
+              <TextInput
+                style={styles.input}
+                placeholder="Tipo Usuario"
+                onChangeText={(userType)=>this.setState({userType})}
+                value={this.setState}
+              />
+              <Button
+                title='Probando Login'
+                onPress={this.postData}
               />
               <Button
                 large
@@ -33,7 +84,7 @@ export default class Login extends React.Component{
                   </Text>
                 </TouchableOpacity>
               </View>
-          </View>
+          </View>          
         );
     }
 }
@@ -53,7 +104,6 @@ const styles = StyleSheet.create({
       color:'white'
     },
     input: {
-      
       borderColor:'black',
       marginBottom:10,
       padding:10,
