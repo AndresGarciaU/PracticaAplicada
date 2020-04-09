@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ Component } from 'react';
 import {  StyleSheet,
           Text, 
           View,
@@ -12,37 +12,66 @@ export default class Login extends React.Component{
   constructor(props){
     super(props);
     this.state={
-        userName: '',
-        userCode: '',
-        userType: '',
+      usuario:'',
+      codigo:'',
+      tipoUsuario:'',
     };
     
   }
 
+  postData= async()=>{
+    fetch('https://limitless-crag-85743.herokuapp.com/api/polievents/login/userlogin',{
+        method:'POST',
+        headers:{
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body:JSON.stringify({
+            user: this.state.usuario,
+            code: this.state.codigo,
+            typeUser: this.state.tipoUsuario
+        })
+    }).then((response) => response.text())
+    .then((responseData) => {
+        var obj= JSON.parse(responseData)
+        if(this.state.usuario==obj.user&&this.state.codigo==obj.code&&this.state.tipoUsuario==obj.typeUser){
+            console.log("Prueba exitosa")
+            {()=> navigate('Home')}
+        }else{
+            console.log("Prueba fallida")
+        }
+    })
+    .catch((err) => { console.log(err); });
+  }
+
     render(){
-          
         const{navigate}=this.props.navigation;
         return(
             <View style={styles.container}>
               <Text style={styles.welcome}>PoliEvents</Text>
               <TextInput
-                style={styles.input}
                 placeholder="Usuario"
+                onChangeText={(usuario)=>this.setState({usuario})}
+                value={this.state.usuario}
               />
               <TextInput
-                style={styles.input}
                 placeholder="Codigo"
-                secureTextEntry
+                onChangeText={(codigo)=>this.setState({codigo})}
+                value={this.state.codigo}
               />
               <TextInput
-                style={styles.input}
                 placeholder="Tipo Usuario"
+                onChangeText={(tipoUsuario)=>this.setState({tipoUsuario})}
+                value={this.state.tipoUsuario}
               />
               <Button
                 large
                 title='INGRESAR' 
-                onPress={()=> navigate('Home'
-                )}
+                onPress={this.postData}
+              />
+              <Button
+                title='Emergencia' 
+                onPress={()=> navigate('Home')}
               />
               <View >
               <Text style={styles.signUpText}>¿No tienes cuenta?</Text>
