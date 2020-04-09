@@ -35,10 +35,9 @@ export default class Login extends React.Component{
     .then((responseData) => {
         var obj= JSON.parse(responseData)
         if(this.state.usuario==obj.user&&this.state.codigo==obj.code&&this.state.tipoUsuario==obj.typeUser){
-            console.log("Prueba exitosa")
-            {()=> navigate('Home')}
+          this.props.navigation.navigate('Home')
         }else{
-            console.log("Prueba fallida")
+          alert('Datos Incorrectos')
         }
     })
     .catch((err) => { console.log(err); });
@@ -50,16 +49,19 @@ export default class Login extends React.Component{
             <View style={styles.container}>
               <Text style={styles.welcome}>PoliEvents</Text>
               <TextInput
+                style={styles.input}
                 placeholder="Usuario"
                 onChangeText={(usuario)=>this.setState({usuario})}
                 value={this.state.usuario}
               />
               <TextInput
+                style={styles.input}
                 placeholder="Codigo"
                 onChangeText={(codigo)=>this.setState({codigo})}
                 value={this.state.codigo}
               />
               <TextInput
+                style={styles.input}
                 placeholder="Tipo Usuario"
                 onChangeText={(tipoUsuario)=>this.setState({tipoUsuario})}
                 value={this.state.tipoUsuario}
@@ -68,10 +70,6 @@ export default class Login extends React.Component{
                 large
                 title='INGRESAR' 
                 onPress={this.postData}
-              />
-              <Button
-                title='Emergencia' 
-                onPress={()=> navigate('Home')}
               />
               <View >
               <Text style={styles.signUpText}>¿No tienes cuenta?</Text>
