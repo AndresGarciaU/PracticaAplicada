@@ -19,7 +19,6 @@ const userExternalSchema = new mongoose.Schema(
         },
         lastName2: {
             type: String,
-            required: true
         },
         reason: {
             type: String,

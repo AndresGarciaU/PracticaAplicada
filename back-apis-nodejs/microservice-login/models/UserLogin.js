@@ -9,10 +9,6 @@ const userLoginSchema = new mongoose.Schema(
         code: {
             type: String,
             required: true
-        },
-        typeUser: {
-            type: String,
-            required: true
         }
     },
     {

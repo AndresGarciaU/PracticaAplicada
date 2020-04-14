@@ -14,8 +14,7 @@ router.post('/userlogin', async (request, response) => {
     try {
         let userLogin = await schemaUserLogin.findOne({
             user: request.body.user,
-            code: request.body.code,
-            typeUser: request.body.typeUser
+            code: request.body.code
         });
 
         if(userLogin == null){
@@ -42,15 +41,13 @@ router.post('/createuser/standart', async (request, response) => {
 
     const userLogin = new schemaUserLogin({
         user: request.body.user,
-        code: request.body.code,
-        typeUser: request.body.typeUser
+        code: request.body.code
     });
 
     try{
         queryUserLogin = await schemaUserLogin.findOne({
             user: userLogin.user,
             code: userLogin.code,
-            typeUser: userLogin.typeUser
         });
 
         if(queryUserLogin == null){

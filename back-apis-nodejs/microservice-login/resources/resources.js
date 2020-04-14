@@ -4,8 +4,7 @@
 
 {
     "user": "admezalo",
-    "code": "1320014100",
-    "typeUser": "estudiante"
+    "code": "1320014100"
 }
 
 /* Example request for user login external */
