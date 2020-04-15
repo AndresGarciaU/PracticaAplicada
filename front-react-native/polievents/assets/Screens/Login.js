@@ -20,7 +20,7 @@ export default class Login extends React.Component{
   }
 
   postData= async()=>{
-    fetch('https://limitless-crag-85743.herokuapp.com/api/polievents/login/userlogin',{
+    fetch('https://sleepy-retreat-55773.herokuapp.com/api/polievents/login/userlogin',{
         method:'POST',
         headers:{
             Accept: 'application/json',
@@ -29,12 +29,12 @@ export default class Login extends React.Component{
         body:JSON.stringify({
             user: this.state.usuario,
             code: this.state.codigo,
-            typeUser: this.state.tipoUsuario
+            //typeUser: this.state.tipoUsuario
         })
     }).then((response) => response.text())
     .then((responseData) => {
         var obj= JSON.parse(responseData)
-        if(this.state.usuario==obj.user&&this.state.codigo==obj.code&&this.state.tipoUsuario==obj.typeUser){
+        if(this.state.usuario==obj.user&&this.state.codigo==obj.code/*&&this.state.tipoUsuario==obj.typeUser*/){
           this.props.navigation.navigate('Home')
         }else{
           alert('Datos Incorrectos')
@@ -60,12 +60,7 @@ export default class Login extends React.Component{
                 onChangeText={(codigo)=>this.setState({codigo})}
                 value={this.state.codigo}
               />
-              <TextInput
-                style={styles.input}
-                placeholder="Tipo Usuario"
-                onChangeText={(tipoUsuario)=>this.setState({tipoUsuario})}
-                value={this.state.tipoUsuario}
-              />
+
               <Button
                 large
                 title='INGRESAR' 
@@ -86,7 +81,12 @@ export default class Login extends React.Component{
         );
     }
 }
-
+              /*<TextInput
+                style={styles.input}
+                placeholder="Tipo Usuario"
+                onChangeText={(tipoUsuario)=>this.setState({tipoUsuario})}
+                value={this.state.tipoUsuario}
+              />*/
 const styles = StyleSheet.create({
     container: {
       flex: 1,
