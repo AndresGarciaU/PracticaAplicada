@@ -5,7 +5,9 @@ import {
     AsyncStorage,
     StyleSheet,
     Image,
-    Button
+    Button,
+    ScrollView,
+    SafeAreaView
 } from 'react-native';
 
     import{events} from './DB_Events';
@@ -30,37 +32,37 @@ export default class Events extends React.Component{
     parseEventsData(){
         if(this.state.events!=null){
             return this.state.events.map((eventos,i)=>{
-                return(
-                    <View
-                        style={styles.events}
-                        key={i}
-                    >
-                        <Image
-                        style={styles.png}
-                            source={{
-                                uri:eventos.images
-                            }}  
-                        />
-                        
-               <Text>
-                    {this.state.text}
-                </Text>
-                        <Text style={styles.title}>
-                            {eventos.title}
-                        </Text>
-                        <Text style={styles.responsible}>
-                            {eventos.responsible}
-                        </Text>
-                        <Text style={styles.description}>
-                            {eventos.description}
-                        </Text>
-                    </View>
+                return(           
+                            <View
+                            style={styles.events}
+                            key={i}>
+                            
+                            <Image
+                            style={styles.png}
+                                source={{
+                                    uri:eventos.images
+                                }}  
+                            />
+                            
+                            <Text>
+                                {this.state.text}
+                            </Text>
+                            <Text style={styles.title}>
+                                {eventos.title}
+                            </Text>
+                            <Text style={styles.responsible}>
+                                {eventos.responsible}
+                            </Text>
+                            <Text style={styles.description}>
+                                {eventos.description}
+                            </Text>
+                            </View>
+
                 )
             })
         }
     }
     getData = async () =>{
-       
         this.setState({text:'Clicked'})
         fetch('https://cherry-cobbler-46588.herokuapp.com/api/polievents/events',{
         method:'GET',
@@ -72,19 +74,21 @@ export default class Events extends React.Component{
     })
     .catch((err) => { console.log(err); });
 }
-       
     render(){
         return(
-            <View style={styles.container}>
-                {this.parseEventsData()} 
-                
-        <Button onPress={this.getData}
-        title='getData'/>
-        <Text>
-                    {this.state.text}
-                </Text>           
-            </View>
-            
+            <SafeAreaView style={styles.container}>
+            <ScrollView style={styles.container}>
+                <View style={styles.container}>
+                    {this.parseEventsData()} 
+                    <Button onPress={this.getData}
+                        title='getData'
+                    />
+                    <Text>
+                        {this.state.text}
+                    </Text>  
+                </View>       
+                </ScrollView>
+            </SafeAreaView>
         );
     }
 }

@@ -17,6 +17,24 @@
             "title":"Maratón Integrales",
             "responsible":"Chappe",
             "description":"Concurso de integrales"
+        },
+        {
+            "images":"https://upload.wikimedia.org/wikipedia/commons/1/11/Automata_finito.png",
+            "title":"Maratón Autómatas",
+            "responsible":"Niquefa",
+            "description":"Concurso de autómatas, tiene bono al corte"
+        },
+        {
+            "images":"https://cecucv.files.wordpress.com/2011/10/acm-icpc1.png",
+            "title":"Maratón Prógramación",
+            "responsible":"Edwin Niño",
+            "description":"Olimpiadas de programación"
+        },
+        {
+            "images":"https://ingenieriaelectronica.org/wp-content/uploads/Integrales-indefinidas-Directas.png",
+            "title":"Maratón Integrales",
+            "responsible":"Chappe",
+            "description":"Concurso de integrales"
         }
     ]
 }
