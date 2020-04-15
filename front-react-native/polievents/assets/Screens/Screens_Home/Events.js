@@ -4,7 +4,8 @@ import {
     View,
     AsyncStorage,
     StyleSheet,
-    Image
+    Image,
+    Button
 } from 'react-native';
 
     import{events} from './DB_Events';
@@ -14,6 +15,7 @@ export default class Events extends React.Component{
         super(props);
         this.state={
             events
+
         }
         try{
             AsyncStorage.getItem(events).then((value)=>{
@@ -39,6 +41,10 @@ export default class Events extends React.Component{
                                 uri:eventos.images
                             }}  
                         />
+                        
+               <Text>
+                    {this.state.text}
+                </Text>
                         <Text style={styles.title}>
                             {eventos.title}
                         </Text>
@@ -53,10 +59,30 @@ export default class Events extends React.Component{
             })
         }
     }
+    getData = async () =>{
+       
+        this.setState({text:'Clicked'})
+        fetch('https://cherry-cobbler-46588.herokuapp.com/api/polievents/events',{
+        method:'GET',
+        
+    }).then((response) => response.text())
+    .then((responseData) => {
+        
+        console.log("response: " + responseData);
+    })
+    .catch((err) => { console.log(err); });
+}
+       
     render(){
         return(
             <View style={styles.container}>
-                {this.parseEventsData()}            
+                {this.parseEventsData()} 
+                
+        <Button onPress={this.getData}
+        title='getData'/>
+        <Text>
+                    {this.state.text}
+                </Text>           
             </View>
             
         );
