@@ -34,4 +34,5 @@ First name:		Practica
 Last name:		Aplicada
 
 mongo "mongodb+srv://cluster0-jchgz.mongodb.net/test"  --username poliEventsAdmin
+mongo "mongodb+srv://cluster0-jchgz.mongodb.net/test"  --username poliEventsAdmin
 Vwn6kv0xw2K5G8vK
