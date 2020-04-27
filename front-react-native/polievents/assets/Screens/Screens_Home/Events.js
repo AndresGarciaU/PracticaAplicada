@@ -16,55 +16,61 @@ export default class Events extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            events
-
+            eventoObj:[],
         }
         try{
-            AsyncStorage.getItem(events).then((value)=>{
+            fetch('https://boiling-escarpment-94908.herokuapp.com/api/polievents/events/',{
+                method:'GET',
+                
+            }).then((response) => response.text())
+            .then((responseData) => {
                 this.setState({
-                    eventos:JSON.parse(value)
-                })
+                    eventoObj: JSON.parse(responseData)
+                });
             })
+            .catch((err) => { console.log(err); });
         }catch(err){
             console.log(err)
         }
     }
     parseEventsData(){
-        if(this.state.events!=null){
-            return this.state.events.map((eventos,i)=>{
-                return(           
+            return this.state.eventoObj.map((eventos,i)=>{   
+                return(       
                             <View
                             style={styles.events}
                             key={i}>
-                            
-                            <Image
-                            style={styles.png}
-                                source={{
-                                    uri:eventos.images
-                                }}  
-                            />
-                            
-                            <Text>
-                                {this.state.text}
+                            <Text style={styles.title}>
+                                {eventos.titulo}
                             </Text>
                             <Text style={styles.title}>
-                                {eventos.title}
+                                {eventos.ciudad}
                             </Text>
-                            <Text style={styles.responsible}>
-                                {eventos.responsible}
+                            <Text style={styles.title}>
+                                {eventos.direccion}
                             </Text>
-                            <Text style={styles.description}>
-                                {eventos.description}
+                            <Text style={styles.title}>
+                                {eventos.presentador}
+                            </Text>
+                            <Text style={styles.title}>
+                                {eventos.anio}
+                            </Text>
+                            <Text style={styles.title}>
+                                {eventos.mes}
+                            </Text>
+                            <Text style={styles.title}>
+                                {eventos.dia}
+                            </Text>
+                            <Text style={styles.title}>
+                                {eventos.duracion}
                             </Text>
                             </View>
 
                 )
-            })
-        }
+            }) 
     }
     getData = async () =>{
         this.setState({text:'Clicked'})
-        fetch('https://cherry-cobbler-46588.herokuapp.com/api/polievents/events',{
+        fetch('https://boiling-escarpment-94908.herokuapp.com/api/polievents/events/',{
         method:'GET',
         
     }).then((response) => response.text())
@@ -82,10 +88,7 @@ export default class Events extends React.Component{
                     {this.parseEventsData()} 
                     <Button onPress={this.getData}
                         title='getData'
-                    />
-                    <Text>
-                        {this.state.text}
-                    </Text>  
+                    /> 
                 </View>       
                 </ScrollView>
             </SafeAreaView>

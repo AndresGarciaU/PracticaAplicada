@@ -66,6 +66,10 @@ export default class Login extends React.Component{
                 title='INGRESAR' 
                 onPress={this.postData}
               />
+              <Button
+              title='X'
+                onPress={()=> navigate('Home')}
+              />
               <View >
               <Text style={styles.signUpText}>¿No tienes cuenta?</Text>
                 <TouchableOpacity

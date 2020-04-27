@@ -15,7 +15,7 @@
     "@react-navigation/native": "^5.0.10",
     "@react-navigation/stack": "^5.2.0",
     "expo": "^36.0.2",
-    "expo-asset": "^8.1.2",
+    "expo-asset": "^8.1.4",
     "fetch": "^1.1.0",
     "install": "^0.13.0",
     "link": "^0.1.5",
