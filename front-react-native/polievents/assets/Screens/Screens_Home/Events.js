@@ -39,56 +39,40 @@ export default class Events extends React.Component{
                             <View
                             style={styles.events}
                             key={i}>
-                            <Text style={styles.title}>
-                                {eventos.titulo}
-                            </Text>
-                            <Text style={styles.title}>
-                                {eventos.ciudad}
-                            </Text>
-                            <Text style={styles.title}>
-                                {eventos.direccion}
-                            </Text>
-                            <Text style={styles.title}>
-                                {eventos.presentador}
-                            </Text>
-                            <Text style={styles.title}>
-                                {eventos.anio}
-                            </Text>
-                            <Text style={styles.title}>
-                                {eventos.mes}
-                            </Text>
-                            <Text style={styles.title}>
-                                {eventos.dia}
-                            </Text>
-                            <Text style={styles.title}>
-                                {eventos.duracion}
-                            </Text>
+                                <Text style={styles.title}>
+                                    {eventos.titulo}
+                                </Text>
+                                <Image
+                                    style={styles.png}
+                                    source={{
+                                        uri:'https://obscure-basin-34228.herokuapp.com/imagenes/especiales/proyecto-12.jpg',
+                                    }}
+                                />
+                                <Text style={styles.description}>
+                                    {'Ciudad: '+eventos.ciudad}
+                                </Text>
+                                <Text style={styles.description}>
+                                    {'Direccion: '+eventos.direccion}
+                                </Text>
+                                <Text style={styles.description}>
+                                    {'Presentador: '+eventos.presentador}
+                                </Text>
+                                <Text style={styles.description}>
+                                    {eventos.dia+'/'+eventos.mes+'/'+eventos.anio}
+                                </Text>
+                                <Text style={styles.description}>
+                                    {'Duracion: '+eventos.duracion+' horas'}
+                                </Text>
                             </View>
-
                 )
             }) 
     }
-    getData = async () =>{
-        this.setState({text:'Clicked'})
-        fetch('https://boiling-escarpment-94908.herokuapp.com/api/polievents/events/',{
-        method:'GET',
-        
-    }).then((response) => response.text())
-    .then((responseData) => {
-        
-        console.log("response: " + responseData);
-    })
-    .catch((err) => { console.log(err); });
-}
     render(){
         return(
             <SafeAreaView style={styles.container}>
             <ScrollView style={styles.container}>
-                <View style={styles.container}>
+                <View style={styles.container2}>
                     {this.parseEventsData()} 
-                    <Button onPress={this.getData}
-                        title='getData'
-                    /> 
                 </View>       
                 </ScrollView>
             </SafeAreaView>
@@ -100,6 +84,12 @@ const styles = StyleSheet.create({
     container:{
         backgroundColor:'#ffff',
         flex: 1,
+    },
+    container2:{
+        backgroundColor:'#00355A',
+        flex: 1,
+        paddingBottom:10,
+        paddingTop:10,
     },
     png:{
         width: 200,
@@ -114,8 +104,6 @@ const styles = StyleSheet.create({
         backgroundColor:'#ffff',
         paddingLeft:60,
         paddingRight:60,
-        marginBottom:1,
-        marginTop:1,
         borderColor:'#00355A',
         borderWidth:1,
         
@@ -125,6 +113,7 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         marginBottom:10,
         fontWeight:'bold',
+        paddingTop:10,
     },
     responsible:{
         fontSize:12,
