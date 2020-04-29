@@ -106,6 +106,7 @@ const styles = StyleSheet.create({
         paddingRight:60,
         borderColor:'#00355A',
         borderWidth:1,
+        paddingBottom:10,
         
     },
     title:{

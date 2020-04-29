@@ -52,30 +52,7 @@ export default class registerFormat extends React.Component{
                         </Text>
                     </TouchableOpacity>
                 </View>
-            </View>
-            /*
-    {
-        "mail": "jcperez@gmail.com",
-        "name1": "Juan",
-        "name2": "Carlos",
-        "lastName1": "Corredor",
-        "lastName2": "Perez",
-        "reason": "motivo-x",
-        "typeUser": "invitado"
-    }
-    
-    INTENTANDO HACER UNA FLATLIST
-                        /<FlatList
-                        data={[
-                            {key: 'Estudiante'},
-                            {key: 'Invitado'},
-                            {key: 'Colaborador'},
-                            {key: 'Administrativo'},
-                        ]}
-                        renderItem={({item}) => <Text style={styles.item}>{item}</Text>}
-                    />
-            */ 
-            
+            </View>  
         );
     }
 }
