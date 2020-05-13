@@ -4,7 +4,7 @@ import {Text,
         Image,
         StyleSheet,
     } from 'react-native';
-import Logo from '../images/FondoApp2.png';
+import Logo from '../images/SplashScreen.png';
 export default class loadingScreen extends React.Component{
     render(){
         const{navigate}=this.props.navigation;
@@ -22,7 +22,7 @@ export default class loadingScreen extends React.Component{
 const styles= StyleSheet.create({
     container:{
         flex:1,
-        backgroundColor:'#fff',
+        backgroundColor:'#E5E5E6',
         justifyContent:'center',
         alignItems:'center',
         paddingTop:0,
