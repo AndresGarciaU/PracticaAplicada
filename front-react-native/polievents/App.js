@@ -3,6 +3,7 @@ import Login from './assets/Screens/Login';
 import Home from './assets/Screens/Home';
 import registerFormat from './assets/Screens/registerFormat';
 import { createAppContainer } from 'react-navigation';
+import loadingScreen from './assets/Screens/loadingScreen';
 
 const Navigator = createStackNavigator({
   Login:{
@@ -13,6 +14,12 @@ const Navigator = createStackNavigator({
   },
   Home:{
     screen:Home,
+    navigationOptions:{
+      header:false
+    }
+  },
+  loadingScreen:{
+    screen:loadingScreen,
     navigationOptions:{
       header:false
     }

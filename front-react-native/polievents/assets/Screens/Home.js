@@ -9,7 +9,7 @@ import {createAppContainer, createSwitchNavigator} from 'react-navigation';
 import settings from './Settings/settings';
 import Events from './Screens_Home/Events';
 import Likes from './Screens_Home/Likes';
-import Admin from './Screens_Home/Admin';
+import Admin from './Screens_Home/AdminFold/Admin';
 import Tickets from './Screens_Home/Tickets';
 import { createStackNavigator } from 'react-navigation-stack';
 

@@ -6,7 +6,7 @@ import {Text,
         TextInput,
 
     } from 'react-native';
-import Login from './Login';
+
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default class registerFormat extends React.Component{
@@ -18,7 +18,7 @@ export default class registerFormat extends React.Component{
                     
                     <Text style={styles.header}>
                         Registro
-                    </Text>
+                    </Text>        
                     <TextInput 
                         style={styles.textInput}
                         placeholder='Nombres'

@@ -62,13 +62,20 @@ export default class Login extends React.Component{
               />
 
               <Button
+                color="#590871"
                 large
                 title='INGRESAR' 
                 onPress={this.postData}
               />
               <Button
+              color="#590871"
               title='X'
                 onPress={()=> navigate('Home')}
+              />
+              <Button
+              color="#590871"
+              title='SplashScreen'
+                onPress={()=> navigate('loadingScreen')}
               />
               <View >
               <Text style={styles.signUpText}>¿No tienes cuenta?</Text>
@@ -97,7 +104,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor:'#00355A'
+      backgroundColor:'#4630AC'
     },
     welcome:{
       padding:10,
@@ -135,7 +142,8 @@ const styles = StyleSheet.create({
     registerText:{
       fontWeight: 'bold',
       textDecorationLine: 'underline',
-      color:'#00B5DE',
+      color:'#590871',
+      //color:'#00B5DE',
       fontSize:14,
       
     }
