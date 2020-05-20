@@ -20,7 +20,7 @@ export default class Login extends React.Component{
   }
 
   postData= async()=>{
-    fetch('https://sleepy-retreat-55773.herokuapp.com/api/polievents/login/userlogin',{
+    fetch('https://protected-eyrie-50244.herokuapp.com/api/polievents/login/userlogin',{
         method:'POST',
         headers:{
             Accept: 'application/json',
@@ -67,16 +67,6 @@ export default class Login extends React.Component{
                 title='INGRESAR' 
                 onPress={this.postData}
               />
-              <Button
-              color="#590871"
-              title='X'
-                onPress={()=> navigate('Home')}
-              />
-              <Button
-              color="#590871"
-              title='SplashScreen'
-                onPress={()=> navigate('loadingScreen')}
-              />
               <View >
               <Text style={styles.signUpText}>¿No tienes cuenta?</Text>
                 <TouchableOpacity
@@ -98,6 +88,13 @@ export default class Login extends React.Component{
                 onChangeText={(tipoUsuario)=>this.setState({tipoUsuario})}
                 value={this.state.tipoUsuario}
               />*/
+              /**
+               *               <Button
+              color="#590871"
+              title='SplashScreen'
+                onPress={()=> navigate('loadingScreen')}
+              />
+               */
 const styles = StyleSheet.create({
     container: {
       flex: 1,

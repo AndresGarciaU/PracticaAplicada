@@ -19,7 +19,7 @@ export default class Events extends React.Component{
             eventoObj:[],
         }
         try{
-            fetch('https://boiling-escarpment-94908.herokuapp.com/api/polievents/events/',{
+            fetch('https://damp-woodland-66864.herokuapp.com/api/poli/events/event/',{
                 method:'GET',
                 
             }).then((response) => response.text())
@@ -45,17 +45,17 @@ export default class Events extends React.Component{
                                 <Image
                                     style={styles.png}
                                     source={{
-                                        uri:'https://obscure-basin-34228.herokuapp.com/imagenes/especiales/proyecto-12.jpg',
+                                        uri:'https://damp-woodland-66864.herokuapp.com/'+eventos.imagen,
                                     }}
                                 />
                                 <Text style={styles.description}>
                                     {'Ciudad: '+eventos.ciudad}
                                 </Text>
                                 <Text style={styles.description}>
-                                    {'Direccion: '+eventos.direccion}
+                                    {'Contacto: '+eventos.contacto}
                                 </Text>
                                 <Text style={styles.description}>
-                                    {'Presentador: '+eventos.presentador}
+                                    {'Tipo: '+eventos.tipo}
                                 </Text>
                                 <Text style={styles.description}>
                                     {eventos.dia+'/'+eventos.mes+'/'+eventos.anio}
@@ -92,10 +92,11 @@ const styles = StyleSheet.create({
         paddingTop:10,
     },
     png:{
-        width: 200,
+        width: 100,
         height: 100,
         justifyContent:'center',
         paddingBottom:10,
+        alignItems:'center'
 
     },
     events:{

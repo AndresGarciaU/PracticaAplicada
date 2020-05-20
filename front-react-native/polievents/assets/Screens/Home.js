@@ -24,12 +24,12 @@ const Tab = createBottomTabNavigator({
     Events:{
         screen: Events
     },
-    Likes:{
+    /*Likes:{
         screen: Likes
     },
     Tickets:{
         screen: Tickets
-    },
+    },*/
     Admin:{
         screen: Admin
     }
